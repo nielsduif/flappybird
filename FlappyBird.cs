@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -18,7 +18,7 @@ namespace FlappyBird
             base.LoadContent();
             screen.X = 640;
             screen.Y = 480;
-            //ApplyResolutionSettings();
+            ApplyResolutionSettings();
 
             // TODO: Add gamestates here
 
