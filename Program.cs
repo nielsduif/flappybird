@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace BaseProject
+namespace FlappyBird
 {
     public static class Program
     {
         [STAThread]
         static void Main()
         {
-            using (var game = new Game1())
+            using (var game = new FlappyBird())
                 game.Run();
         }
     }
