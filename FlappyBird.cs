@@ -19,8 +19,8 @@ namespace FlappyBird
             screen.X = 640;
             screen.Y = 480;
             ApplyResolutionSettings();
-
-            // TODO: Add gamestates here
+            gameStateList.Add(new PlayingState());
+            GameEnvironment.SwitchTo(0);
 
         }
     }
