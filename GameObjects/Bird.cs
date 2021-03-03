@@ -4,32 +4,40 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FlappyBird.GameObjects
+namespace FlappyBird
 {
     class Bird : SpriteGameObject
     {
+        Vector2 StartPosition;
         int fallAmount = 20;
         int jumpAmount = 450;
 
         public Bird() : base("spr_bird")
         {
+            StartPosition = new Vector2(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
+            Reset();
+        }
 
+        public override void Reset()
+        {
+            position = StartPosition;
+            velocity = Vector2.Zero;
         }
 
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
-            velocity.Y = fallAmount;
-
             position += velocity;
         }
 
         public override void HandleInput(InputHelper inputHelper)
         {
-            base.HandleInput(inputHelper);
             if (inputHelper.KeyPressed(Keys.Space))
             {
-                velocity.Y -= jumpAmount;
+                velocity.Y = -jumpAmount;
+            }
+            else
+            {
+                velocity.Y = fallAmount;
             }
         }
     }

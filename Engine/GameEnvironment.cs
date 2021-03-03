@@ -44,7 +44,7 @@ class GameEnvironment : Game
     {
         graphics = new GraphicsDeviceManager(this);
         inputHelper = new InputHelper();
-        Content.RootDirectory = "Content";
+        Content.RootDirectory = "Content/FlappyBirdContent";
         content = Content;
         gameStateList = new List<GameObject>();
         random = new Random();
