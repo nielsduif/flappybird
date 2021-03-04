@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FlappyBird
+namespace FlappyBird.GameObjects
 {
     class Bird : SpriteGameObject
     {
@@ -14,7 +14,7 @@ namespace FlappyBird
 
         public Bird() : base("spr_bird")
         {
-            StartPosition = new Vector2(GameEnvironment.Screen.X / 2, GameEnvironment.Screen.Y / 2);
+            StartPosition = new Vector2(GameEnvironment.Screen.X / 2 - texture.Width / 2, GameEnvironment.Screen.Y / 2 - texture.Height / 2);
             Reset();
         }
 
