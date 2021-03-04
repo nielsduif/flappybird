@@ -1,3 +1,4 @@
+using FlappyBird.GameStates;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -19,7 +20,9 @@ namespace FlappyBird
             screen.X = 640;
             screen.Y = 480;
             ApplyResolutionSettings();
+            gameStateList.Add(new TitleScreenState());
             gameStateList.Add(new PlayingState());
+            gameStateList.Add(new GameOverState());
             GameEnvironment.SwitchTo(0);
 
         }

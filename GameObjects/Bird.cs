@@ -6,15 +6,16 @@ using System.Text;
 
 namespace FlappyBird.GameObjects
 {
-    class Bird : SpriteGameObject
+    class Bird : RotatingSpriteGameObject
     {
         Vector2 StartPosition;
-        int fallAmount = 20;
-        int jumpAmount = 450;
+        float fallAmount = .33f;
+        float jumpAmount = 7.5f;
 
         public Bird() : base("spr_bird")
         {
             StartPosition = new Vector2(GameEnvironment.Screen.X / 2 - texture.Width / 2, GameEnvironment.Screen.Y / 2 - texture.Height / 2);
+            Origin = new Vector2(texture.Width / 2, texture.Height / 2);
             Reset();
         }
 
@@ -26,6 +27,7 @@ namespace FlappyBird.GameObjects
 
         public override void Update(GameTime gameTime)
         {
+            AngularDirection = new Vector2(100, velocity.Y);
             position += velocity;
         }
 
@@ -39,6 +41,11 @@ namespace FlappyBird.GameObjects
             {
                 velocity.Y = fallAmount;
             }
+        }
+
+        public bool onScreen()
+        {
+            return (position.X > 0 && position.X - texture.Width < GameEnvironment.Screen.X && position.Y > 0 && position.Y - texture.Height < GameEnvironment.Screen.Y);
         }
     }
 }

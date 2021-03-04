@@ -1,0 +1,8 @@
+﻿●	Een verticaal op en neer bewegende Pipe 
+	subclase van pipe maken en de update overriden waarin de positie wordt aangepast op basis van velocity
+
+●	Een Pipe waarvan de opening steeds kleiner wordt 
+	parameter meegeven aan de pipe class om de afstand tussen de twee pipes mee te geven en in de 'main' te bepalen
+
+●	Wat moet je aan je code toevoegen om dit voor elkaar te krijgen? 
+	kanon class, bullet class beide van rotatingSpriteGO, in de playingstate de angle aanpassen of bird positie meegeven om de hoek te bepalen
